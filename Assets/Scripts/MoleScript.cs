@@ -19,7 +19,7 @@ public class MoleScript : MonoBehaviour
 
     void Start()
     {
-        
+        Debug.Log("START");
     }
     
     void Update()
@@ -77,8 +77,10 @@ public class MoleScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+    	Debug.Log("OnTriggerEnter");
         if (other.gameObject.tag == "Hammer")
         {
+    		Debug.Log("Hammer");
             gameController.AddPoint();
             
             gameObject.GetComponent<Animator>().SetTrigger("hit");
