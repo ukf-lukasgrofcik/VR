@@ -8,8 +8,8 @@ public class GameController : MonoBehaviour
 {
 
     public GameObject molePrefab;
-    public GameObject timerText;
-    public GameObject pointsText;
+    public TMP_Text timerText;
+    public TMP_Text pointsText;
     public GameObject[] molesSpawnPoints;
 
     private float time;
@@ -54,7 +54,7 @@ public class GameController : MonoBehaviour
 
     private void DrawTime()
     {
-        timerText.GetComponent<TMP_Text>().SetText("0:" + Mathf.RoundToInt(time));
+        timerText.SetText("0:" + Mathf.RoundToInt(time));
     }
 
     private void ResetPoints()
@@ -73,7 +73,7 @@ public class GameController : MonoBehaviour
 
     private void DrawPoints()
     {
-        pointsText.GetComponent<TextMeshPro>().SetText(points.ToString());
+        pointsText.SetText(points.ToString());
     }
 
     private void InstantiateMoles()
